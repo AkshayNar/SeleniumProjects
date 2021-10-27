@@ -9,6 +9,7 @@ import utilClasses.Utility;
 
 public class LaunchPage {
 		
+	
 		WebDriver driver;
 		
 		@FindBy (xpath = "(//input[@type='text'])[2]")
