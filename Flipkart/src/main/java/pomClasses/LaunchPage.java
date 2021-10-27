@@ -16,6 +16,13 @@ public class LaunchPage {
 		
 		
 		
+		
+		
+		
+		
+		
+		
+		
 		@FindBy (xpath = "(//input[@type='text'])[2]")
 		private WebElement emailId;
 		
