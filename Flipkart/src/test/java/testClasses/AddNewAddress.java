@@ -6,13 +6,16 @@ import org.testng.annotations.AfterClass;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.BeforeMethod;
+import org.testng.annotations.BeforeTest;
+import org.testng.annotations.Parameters;
 import org.testng.annotations.Test;
 
+import base.BaseClass;
 import pomClasses.HomePage;
 import pomClasses.LaunchPage;
 import pomClasses.UserProfilePage;
 
-public class AddNewAddress {
+public class AddNewAddress extends BaseClass{
 	
 WebDriver driver;
 	
@@ -20,13 +23,26 @@ WebDriver driver;
 	HomePage home;
 	UserProfilePage profile;
 	
+	
+	@BeforeTest
+	@Parameters ("browser")
+	public void beforeTest(String browser)
+	{
+		if(browser.equalsIgnoreCase("chrome"))
+		{
+			driver = ChromeBrowser();
+		}
+		else
+		{
+			driver = FirefoxBrowser();
+		}
+	}
+	
 	@BeforeClass
 	public void beforeClass()
 	{
-		System.setProperty("webdriver.chrome.driver", "C:\\Users\\Lenovo\\Desktop\\Velocity Class\\Automation\\Drivers and libraries\\chromedriver.exe");
-		driver = new ChromeDriver();
+		
 		driver.get("https://www.flipkart.com/");
-		driver.manage().window().maximize();
 		logIn = new LaunchPage(driver);
 		home = new HomePage(driver);
 		profile = new UserProfilePage(driver);
@@ -44,10 +60,9 @@ WebDriver driver;
 	
 	
 	@Test
-	public void test1()
+	public void test1() throws InterruptedException
 	{
 		home.clickOnGoToMore();
-		home.clickOnProfile();
 		
 		profile.clickOnManageAddresstext();
 		profile.clickOnNewAddressText();
@@ -72,7 +87,7 @@ WebDriver driver;
 	public void afterClass()
 	{
 		
-		
+		driver.close();
 	}
 
 }

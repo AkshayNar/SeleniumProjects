@@ -39,7 +39,7 @@ public class Utility {
 	
 	public static String getDataFromXcelSheet(String sheetName, int row, int column) throws EncryptedDocumentException, IOException 
 	{
-		FileInputStream file = new FileInputStream("C:\\Users\\Lenovo\\Desktop\\Products.xlsx");
+		FileInputStream file = new FileInputStream("src\\test\\resources\\DataFiles\\Products.xlsx");
 		
 		String searchText = WorkbookFactory.create(file).getSheet(sheetName).getRow(row).getCell(column).getStringCellValue();
 		

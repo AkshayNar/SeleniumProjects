@@ -22,7 +22,7 @@ public class VerifyLogin extends BaseClass{
 	
 	@BeforeTest
 	@Parameters ("browser")
-	public void beforeMethod(String browser)
+	public void beforeTest(String browser)
 	{
 		if(browser.equalsIgnoreCase("chrome"))
 		{
@@ -38,7 +38,6 @@ public class VerifyLogin extends BaseClass{
 	public void beforeClass()
 	{
 		driver.get("https://www.flipkart.com/");
-		driver.manage().window().maximize();
 		logIn = new LaunchPage(driver);
 		
 	}
@@ -73,7 +72,7 @@ public class VerifyLogin extends BaseClass{
 	@AfterClass
 	public void afterClass()
 	{
-		
+		driver.close();
 	}
 
 }

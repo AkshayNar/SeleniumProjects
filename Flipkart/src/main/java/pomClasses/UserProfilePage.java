@@ -51,7 +51,7 @@ WebDriver driver;
 	
 	public void clickOnManageAddresstext()
 	{
-		Utility.expliciteWait(driver, 5, manageAddressText);
+		Utility.expliciteWait(driver, 6, manageAddressText);
 		manageAddressText.click();
 	}
 	

@@ -38,7 +38,7 @@ WebDriver driver;
 	
 	@BeforeTest
 	@Parameters ("browser")
-	public void beforeMethod(String browser) throws InterruptedException
+	public void beforeTest(String browser) throws InterruptedException
 	{
 		if(browser.equalsIgnoreCase("chrome"))
 		{
@@ -56,7 +56,6 @@ WebDriver driver;
 	{
 		
 		driver.get("https://www.flipkart.com/");
-		driver.manage().window().maximize();
 		logIn = new LaunchPage(driver);
 		home = new HomePage(driver);
 		productDetails = new ProductDetailPage(driver);

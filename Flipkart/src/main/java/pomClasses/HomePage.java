@@ -26,7 +26,7 @@ WebDriver driver;
 	
 	
 	//------------------ Add Address Elements ------------------------
-	@FindBy (xpath = "//div[text()='Akshay']")
+	@FindBy (xpath = "//div[text()='My Account']")
 	private WebElement goToMore;
 	
 	@FindBy (xpath = "(//li[@class='_2NOVgj'])[1]")
@@ -68,7 +68,7 @@ WebDriver driver;
 	}
 	
 	
-	public void clickOnGoToMore()
+	public void clickOnGoToMore() throws InterruptedException
 	{
 		Actions act = new Actions(driver);
 		
@@ -77,12 +77,17 @@ WebDriver driver;
 		
 		Utility.expliciteWait(driver, 5, profileBtn);
 		act.moveToElement(profileBtn).build().perform();
-	}
-	
-	public void clickOnProfile()
-	{
+		
 		Utility.expliciteWait(driver, 5, profileBtn);
 		profileBtn.click();
+		
+		Utility.expliciteWait(driver, 5, profileBtn);
+		act.moveToElement(searchBtn).build().perform();
+		
+		Thread.sleep(2000);
+		
 	}
+	
+	
 
 }

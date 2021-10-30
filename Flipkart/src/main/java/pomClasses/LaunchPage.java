@@ -11,9 +11,6 @@ public class LaunchPage {
 		
 	
 	
-	
-	
-	
 		WebDriver driver;
 		
 		@FindBy (xpath = "(//input[@type='text'])[2]")
@@ -36,13 +33,13 @@ public class LaunchPage {
 		public void putEmailId()
 		{
 			Utility.expliciteWait(driver, 5, emailId);
-			emailId.sendKeys("akshaynarhare1541@gmail.com");
+			emailId.sendKeys("er.psudarshan96@gmail.com");
 		}
 		
 		public void putPassword()
 		{
 			Utility.expliciteWait(driver, 5, password);
-			password.sendKeys("Akshay4582");
+			password.sendKeys("pawar1234");
 		}
 		
 		public void clickLoginBtn()
