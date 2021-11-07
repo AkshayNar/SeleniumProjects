@@ -33,13 +33,13 @@ public class LaunchPage {
 		public void putEmailId()
 		{
 			Utility.expliciteWait(driver, 5, emailId);
-			emailId.sendKeys("er.psudarshan96@gmail.com");
+			emailId.sendKeys("put your own email");
 		}
 		
 		public void putPassword()
 		{
 			Utility.expliciteWait(driver, 5, password);
-			password.sendKeys("pawar1234");
+			password.sendKeys("put your own password");
 		}
 		
 		public void clickLoginBtn()
